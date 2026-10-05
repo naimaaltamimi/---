@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بيتزا هاوس المكلا | Hawas Pizza - أشهى بيتزا ووجبات سريعة في حضرموت</title>
+  <meta name="description"
+    content="مطعم بيتزا هواس في المكلا - ألذ أنواع البيتزا الإيطالية والأمريكية، برجر، مقبلات شهية وتوصيل سريع لكافة أحياء المكلا. اطلب الآن وتتبع طلبك مباشرة!">
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <span class="announcement-badge">🔥 عرض اليوم</span>
+      <span class="announcement-text">توصيل سريع ساخن لجميع مناطق المكلا (الشرج، الديس، فوه، المكلا القديمة..) | اطلب
+        عبر الموقع واستمتع بأشهى مذاق!</span>
+      <a href="#menu-section" class="announcement-link">اطلب الآن ⚡</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" id="brandLogo">
+        <div class="logo-icon-wrap">
+          <svg viewBox="0 0 24 24" class="logo-icon" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+          </svg>
+          <span class="flame-spark">🔥</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">بيتزا هَـوّاس</span>
+          <span class="brand-sub">المكلا - HAWAS PIZZA</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero-section" class="nav-link active">الرئيسية</a>
+        <a href="#menu-section" class="nav-link">قائمة الطعام</a>
+        <a href="#deals-section" class="nav-link">العروض الخاصة</a>
+        <a href="#branches-section" class="nav-link">فروعنا وأوقاتنا</a>
+      </nav>
+
+      <!-- Action Buttons (Tracker & Cart) -->
+      <div class="header-actions">
+        <!-- Live Tracker Button -->
+        <button type="button" class="btn-tracker" id="btnOpenTracker" title="تتبع حالة طلبك">
+          <span class="tracker-pulse" id="trackerPulse"></span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span class="tracker-label">تتبع طلبي</span>
+        </button>
+
+        <!-- Cart Button with Counter -->
+        <button type="button" class="btn-cart" id="btnOpenCart" aria-label="سلة المشتريات">
+          <div class="cart-icon-wrap">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cartCount">0</span>
+          </div>
+          <span class="cart-total-preview" id="cartTotalPreview">0 ر.ي</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          <span>المذاق الإيطالي الأصيل بلمسة حضرمية مميزة</span>
+        </div>
+        <h1 class="hero-title">
+          ألذّ بيتزا في <span class="highlight-text">المُكلا</span>.. عجين طازج ومكونات فاخرة!
+        </h1>
+        <p class="hero-description">
+          نخبزها بحب فور طلبك في أفراننا الحجرية الساخنة مع أطيب أنواع الجبن والصلصات الخاصة. استمتع بأقوى العروض وتوصيل
+          مباشر لمنزلك أو مكتبك.
+        </p>
+
+        <!-- Highlights Row -->
+        <div class="hero-features">
+          <div class="feature-item">
+            <span class="feature-icon">🛵</span>
+            <div class="feature-info">
+              <strong>توصيل سريع</strong>
+              <span>خلال 30 - 45 دقيقة</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🧀</span>
+            <div class="feature-info">
+              <strong>موزاريلا أصلية 100%</strong>
+              <span>جبنة تشد ومذاق لا يقاوم</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📍</span>
+            <div class="feature-info">
+              <strong>كل أحياء المكلا</strong>
+              <span>الشرج، الديس، فوه، بويش..</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions">
+          <a href="#menu-section" class="btn btn-primary btn-large">
+            <span>تصفح المنيو واطلب الآن</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </a>
+          <button type="button" class="btn btn-outline btn-large" id="btnHeroTrack">
+            <span>متابعة حالة طلب قائم</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="assets/hero_pizza.jpg" alt="بيتزا هواس الفاخرة - المكلا" class="hero-main-img" id="heroPizzaImg"
+            onerror="this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900&auto=format&fit=crop&q=80'">
+          <div class="hero-floating-badge badge-top">
+            <span class="badge-icon">🍕</span>
+            <div>
+              <strong>بيتزا هواس الخاصة</strong>
+              <small>الأكثر مبيعاً في المكلا</small>
+            </div>
+          </div>
+          <div class="hero-floating-badge badge-bottom">
+            <span class="badge-icon">⭐ 4.9</span>
+            <div>
+              <strong>ثقة آلاف الزبائن</strong>
+              <small>تقييمات ممتازة يومياً</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Deals Section (عروض التوفير) -->
+  <section class="deals-section" id="deals-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">وفر أكثر واستمتع بالمذاق</div>
+        <h2 class="section-title">🔥 أقوى عروض اليوم في بيتزا هواس</h2>
+      </div>
+
+      <div class="deals-grid">
+        <!-- Deal 1 -->
+        <div class="deal-card featured-deal">
+          <div class="deal-badge">عرض الويكند العائلي</div>
+          <div class="deal-content">
+            <h3 class="deal-title">كومبو لِـمّة العائلة 🍕🍕🍟🥤</h3>
+            <p class="deal-desc">2 بيتزا حجم كبير من اختيارك + 1 بطاطس عائلي كبير ومقرمش + لتر بيبسي بارد مجاناً!</p>
+            <div class="deal-pricing">
+              <span class="deal-old-price">18,500 ر.ي</span>
+              <span class="deal-price">14,900 <small>ر.ي فقط</small></span>
+            </div>
+            <button type="button" class="btn btn-deal" onclick="hawasApp.addSpecialDeal('deal-family')">
+              <span>طلب هذا العرض الآن</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Deal 2 -->
+        <div class="deal-card">
+          <div class="deal-badge">وجبة فردية مشبعة</div>
+          <div class="deal-content">
+            <h3 class="deal-title">وجبة السوبر كومبو 🍔🍟🥤</h3>
+            <p class="deal-desc">برجر دبل كرسبي تشيكن بالجبن السائل + بطاطس متبلة مقرمشة + بيبسي مثلج مع صوص هواس الخاص.
+            </p>
+            <div class="deal-pricing">
+              <span class="deal-old-price">7,500 ر.ي</span>
+              <span class="deal-price">5,900 <small>ر.ي</small></span>
+            </div>
+            <button type="button" class="btn btn-deal" onclick="hawasApp.addSpecialDeal('deal-burger')">
+              <span>طلب هذا العرض الآن</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Deal 3 -->
+        <div class="deal-card">
+          <div class="deal-badge">عرض الثنائي</div>
+          <div class="deal-content">
+            <h3 class="deal-title">ثنائي البيتزا الوسط 🍕🍕</h3>
+            <p class="deal-desc">احصل على 2 بيتزا وسط (مارجريتا أو دجاج باربكيو أو خضار) مع أصابع جبن موزاريلا ساخنة
+              بنصف السعر.</p>
+            <div class="deal-pricing">
+              <span class="deal-old-price">14,000 ر.ي</span>
+              <span class="deal-price">11,200 <small>ر.ي</small></span>
+            </div>
+            <button type="button" class="btn btn-deal" onclick="hawasApp.addSpecialDeal('deal-duo')">
+              <span>طلب هذا العرض الآن</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section -->
+  <section class="menu-section" id="menu-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">تذوق الإبداع من أفراننا</div>
+        <h2 class="section-title">قائمة طعام بيتزا هَوّاس بالمكلا</h2>
+        <p class="section-desc">اختر صنفك المفضل، وخصّص الحجم والعجينة والإضافات حسب ذوقك بضغطة زر واحدة!</p>
+      </div>
+
+      <!-- Search and Filter Controls -->
+      <div class="menu-controls">
+        <!-- Live Search Input -->
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" width="20" height="20" class="search-icon" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="menuSearchInput" placeholder="ابحث عن صنفك المفضل (بيتزا، رانش، برجر، أجنحة، بطاطس...)"
+            autocomplete="off">
+          <button type="button" class="clear-search-btn" id="clearSearchBtn" title="مسح البحث">&times;</button>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs" id="categoryTabs">
+          <button type="button" class="cat-tab active" data-category="all">
+            <span class="cat-icon">🍽️</span>
+            <span>الكل</span>
+          </button>
+          <button type="button" class="cat-tab" data-category="special-pizza">
+            <span class="cat-icon">⭐</span>
+            <span>بيتزا هواس المميزة</span>
+          </button>
+          <button type="button" class="cat-tab" data-category="classic-pizza">
+            <span class="cat-icon">🍕</span>
+            <span>البيتزا الكلاسيكية</span>
+          </button>
+          <button type="button" class="cat-tab" data-category="burgers">
+            <span class="cat-icon">🍔</span>
+            <span>برجر وساندوتشات</span>
+          </button>
+          <button type="button" class="cat-tab" data-category="appetizers">
+            <span class="cat-icon">🍗</span>
+            <span>مقبلات وجوانب</span>
+          </button>
+          <button type="button" class="cat-tab" data-category="drinks">
+            <span class="cat-icon">🥤</span>
+            <span>مشروبات وصوصات</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Dynamic Cards Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State if no search results -->
+      <div class="empty-menu-state" id="emptyMenuState" style="display: none;">
+        <span class="empty-icon">🔍</span>
+        <h3>عذراً، لم نعثر على نتائج مطابقة!</h3>
+        <p>جرب البحث بكلمات أخرى مثل "رانش" أو "برجر" أو تصفح كل الأقسام.</p>
+        <button type="button" class="btn btn-outline" id="btnResetSearch">عرض جميع الأصناف</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works & Delivery to Mukalla Areas -->
+  <section class="delivery-areas-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">خدمة سريعة ومضمونة</div>
+        <h2 class="section-title">كيف نخدم أهالي وزوار المكلا؟</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">📱</div>
+          <h3>اختر وجبتك وفصّلها</h3>
+          <p>حدد نوع البيتزا والحجم والإضافات أو وجبات البرجر والمقبلات وأضفها لسلتك بسهولة.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">📍</div>
+          <h3>حدد موقعك في المكلا</h3>
+          <p>نوصلك أينما كنت: الشرج، الديس، فوه، المكلا القديمة، 40 شقة، الغليلة، بويش، روكب وغيرها.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🔥</div>
+          <h3>خبز طازج فوري</h3>
+          <p>تُخبز البيتزا فور إرسال الطلب في أفراننا الساخنة لضمان وصولها مقرمشة وساخنة مع الجبن الذائب.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon">🛵</div>
+          <h3>تتبع واستلم واستمتع!</h3>
+          <p>تتبع طلبك حياً خطوة بخطوة حتى وصول الكابتن لبابك، مع خيارات دفع مريحة (كاش أو كريمي/قطيبي).</p>
+        </div>
+      </div>
+
+      <!-- Mukalla Districts Ribbon -->
+      <div class="districts-ribbon">
+        <h4>مناطق التوصيل المغطاة في المكلا:</h4>
+        <div class="districts-tags">
+          <span class="d-tag">حي الشرج</span>
+          <span class="d-tag">حي الديس</span>
+          <span class="d-tag">فوه المساكن</span>
+          <span class="d-tag">فوه المتضررين</span>
+          <span class="d-tag">فوه القديمة</span>
+          <span class="d-tag">المكلا القديمة</span>
+          <span class="d-tag">حي الغليلة</span>
+          <span class="d-tag">حي 40 شقة</span>
+          <span class="d-tag">منطقة خلف</span>
+          <span class="d-tag">بويش والرواد</span>
+          <span class="d-tag">روكب</span>
+          <span class="d-tag">جول مسحة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branches & Info Section -->
+  <section class="branches-section" id="branches-section">
+    <div class="container branches-grid">
+      <div class="branch-card">
+        <div class="branch-header">
+          <span class="branch-badge">الفرع الرئيسي</span>
+          <h3>مطعم بيتزا هَوّاس - المكلا</h3>
+        </div>
+        <p class="branch-location">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          حضرموت، مدينة المكلا - الشارع العام (بالقرب من مركز المدينة)
+        </p>
+
+        <div class="branch-details">
+          <div class="detail-row">
+            <span class="detail-icon">⏰</span>
+            <div>
+              <strong>أوقات العمل واستقبال الطلبات:</strong>
+              <span>يومياً من الساعة 4:00 عصراً حتى 2:00 بعد منتصف الليل</span>
+            </div>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">📞</span>
+            <div>
+              <strong>أرقام الاتصال المباشر:</strong>
+              <span dir="ltr">+967 770 000 000 / +967 730 000 000</span>
+            </div>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">💬</span>
+            <div>
+              <strong>خدمة واتساب الطلبات السريعة:</strong>
+              <span>متاح للتأكيد المباشر والمتابعة الفورية</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-actions">
+          <a href="https://wa.me/967770000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7%20%D9%87%D9%88%D8%A7%D8%B3%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B7%D9%84%D8%A8"
+            target="_blank" class="btn btn-whatsapp">
+            <span>تواصل عبر واتساب المطعم</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.997.567 2.057.879 3.218.879 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.823 0-3.539-.493-5.029-1.353l-6.971 1.825 1.859-6.804c-.939-1.547-1.478-3.364-1.478-5.302 0-5.514 4.486-10 10-10s10 4.486 10 10z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Delivery Map Placeholder / Visual -->
+      <div class="map-visual-card">
+        <div class="map-badge">📍 شبكة توصيل المكلا</div>
+        <div class="map-placeholder">
+          <div class="pulse-marker marker-sharj" title="الشرج"><span>الشرج</span></div>
+          <div class="pulse-marker marker-dees" title="الديس"><span>الديس</span></div>
+          <div class="pulse-marker marker-fowa" title="فوه"><span>فُوّه</span></div>
+          <div class="pulse-marker marker-old" title="المكلا القديمة"><span>المكلا القديمة</span></div>
+          <div class="map-overlay-info">
+            <span class="map-title">أسطول توصيل جاهز في كل الأحياء</span>
+            <span class="map-sub">نضمن وصول البيتزا ساخنة ومقرمشة مع كباتن التوصيل السريع</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon-wrap sm">🍕</span>
+          <h3>بيتزا هَـوّاس | المكلا</h3>
+        </div>
+        <p>المذاق الرائد في البيتزا والوجبات السريعة في مدينة المكلا - حضرموت. عجين طازج ومكونات مختارة بعناية فائقة
+          لنقدم لكم التجربة الألذ على الإطلاق.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#menu-section">قائمة الطعام (المنيو)</a></li>
+          <li><a href="#deals-section">عروض التوفير</a></li>
+          <li><a href="#branches-section">فروعنا بالمكلا</a></li>
+          <li><a href="javascript:void(0)" onclick="hawasApp.openOrderHistoryModal()">سجل طلباتي السابقة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-payment-methods">
+        <h4>طرق الدفع المعتمدة</h4>
+        <div class="payment-badges">
+          <span class="pay-tag">💵 كاش عند الاستلام</span>
+          <span class="pay-tag">🏦 بنك الكريمي</span>
+          <span class="pay-tag">📱 بنك القطيبي</span>
+        </div>
+        <p class="currency-note">جميع الأسعار المعروضة بالريال اليمني (ر.ي / YER)</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 مطعم بيتزا هواس - المكلا. جميع الحقوق محفوظة.</p>
+        <p class="dev-credits">تم التصميم والتطوير بواجهة حديثة وفائقة السرعة</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODAL: Pizza Customizer (نافذة تفصيل البيتزا) -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="customizerBackdrop">
+    <div class="modal-dialog modal-customizer" id="customizerModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h3 id="customizerItemName">بيتزا هواس الخاصة</h3>
+          <span class="item-category-tag" id="customizerItemTag">بيتزا إيطالية فاخرة</span>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeCustomizerBtn" aria-label="إغلاق">&times;</button>
+      </div>
+
+      <div class="modal-body customizer-body">
+        <!-- Item Preview Header -->
+        <div class="customizer-preview">
+          <img id="customizerItemImg" src="" alt="معاينة الصنف" class="customizer-img">
+          <div class="customizer-desc-box">
+            <p id="customizerItemDesc">صلصة الطماطم الغنية، جبنة موزاريلا فاخرة، بيبروني، شرائح الدجاج، فطر طازج، فلفل
+              رومي وزيتون أسود.</p>
+          </div>
+        </div>
+
+        <form id="customizerForm">
+          <!-- Step 1: Size Selector -->
+          <div class="customizer-section" id="sizeSelectionSection">
+            <div class="section-label">
+              <span class="badge-num">1</span>
+              <h4>اختر الحجم المطلوب <span class="required-mark">*</span></h4>
+            </div>
+            <div class="size-options-grid" id="sizeOptionsGrid">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+
+          <!-- Step 2: Crust Selector -->
+          <div class="customizer-section" id="crustSelectionSection">
+            <div class="section-label">
+              <span class="badge-num">2</span>
+              <h4>نوع العجينة والأطراف</h4>
+            </div>
+            <div class="crust-options-list" id="crustOptionsList">
+              <label class="custom-radio">
+                <input type="radio" name="pizzaCrust" value="classic" checked data-price="0">
+                <span class="radio-indicator"></span>
+                <span class="crust-info">
+                  <strong>عجينة كلاسيكية متوسطة السمك</strong>
+                  <small>مخبوزة بفرن حجري مقرمشة من الخارج وطرية من الداخل</small>
+                </span>
+                <span class="option-price">مجاناً</span>
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="pizzaCrust" value="stuffed" data-price="1000">
+                <span class="radio-indicator"></span>
+                <span class="crust-info">
+                  <strong>أطراف محشوة جبنة موزاريلا ذائبة 🧀</strong>
+                  <small>حشوة جبن فاخرة تمتد على كامل أطراف البيتزا</small>
+                </span>
+                <span class="option-price">+1,000 ر.ي</span>
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="pizzaCrust" value="thin" data-price="0">
+                <span class="radio-indicator"></span>
+                <span class="crust-info">
+                  <strong>عجينة رقيقة ومقرمشة (Thin Crust)</strong>
+                  <small>طراز نابولي الإيطالي خفيفة ومقرمشة</small>
+                </span>
+                <span class="option-price">مجاناً</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Extra Toppings -->
+          <div class="customizer-section" id="extrasSection">
+            <div class="section-label">
+              <span class="badge-num">3</span>
+              <h4>إضافات وتتبيلات حسب الرغبة (اختياري)</h4>
+            </div>
+            <div class="extras-grid" id="extrasGrid">
+              <label class="custom-checkbox">
+                <input type="checkbox" name="extraTopping" value="double_cheese" data-price="800"
+                  data-name="موزاريلا دبل">
+                <span class="checkbox-indicator"></span>
+                <span class="extra-name">موزاريلا دبل 🧀</span>
+                <span class="extra-price">+800 ر.ي</span>
+              </label>
+              <label class="custom-checkbox">
+                <input type="checkbox" name="extraTopping" value="jalapeno" data-price="400" data-name="هلابينو حار">
+                <span class="checkbox-indicator"></span>
+                <span class="extra-name">هلابينو مكسيكي حار 🌶️</span>
+                <span class="extra-price">+400 ر.ي</span>
+              </label>
+              <label class="custom-checkbox">
+                <input type="checkbox" name="extraTopping" value="mushroom" data-price="500" data-name="فطر طازج">
+                <span class="checkbox-indicator"></span>
+                <span class="extra-name">مشروم طازج 🍄</span>
+                <span class="extra-price">+500 ر.ي</span>
+              </label>
+              <label class="custom-checkbox">
+                <input type="checkbox" name="extraTopping" value="ranch_drizzle" data-price="400"
+                  data-name="رذاذ صوص رانش">
+                <span class="checkbox-indicator"></span>
+                <span class="extra-name">صوص رانش إضافي على الوجه</span>
+                <span class="extra-price">+400 ر.ي</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 4: Special Instructions -->
+          <div class="customizer-section">
+            <div class="section-label">
+              <span class="badge-num">4</span>
+              <h4>ملاحظات خاصة على الطلب (اختياري)</h4>
+            </div>
+            <textarea id="customizerNotes" class="custom-textarea" rows="2"
+              placeholder="مثال: بدون بصل، تحمير إضافي، تقطيع لـ 8 قطع..."></textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal Footer (Sticky Bottom Action) -->
+      <div class="modal-footer customizer-footer">
+        <div class="quantity-stepper">
+          <button type="button" class="btn-qty" id="btnQtyMinus" aria-label="تقليل الكمية">-</button>
+          <span class="qty-display" id="customizerQty">1</span>
+          <button type="button" class="btn-qty" id="btnQtyPlus" aria-label="زيادة الكمية">+</button>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-add-cart" id="btnConfirmAddToCart">
+          <span>إضافة إلى السلة</span>
+          <span class="separator">|</span>
+          <strong id="customizerLiveTotal">0 ر.ي</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- DRAWER: Cart Drawer (سلة المشتريات المنبثقة) -->
+  <!-- ============================================== -->
+  <div class="drawer-backdrop" id="cartBackdrop">
+    <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <h3>سلة طلباتك (<span id="cartItemsCountText">0</span>)</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" id="closeCartBtn" aria-label="إغلاق">&times;</button>
+      </div>
+
+      <div class="drawer-body" id="cartDrawerBody">
+        <!-- Cart Items List -->
+        <div class="cart-items-list" id="cartItemsList">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Empty Cart Notice -->
+        <div class="empty-cart-state" id="emptyCartState">
+          <span class="empty-cart-icon">🛒</span>
+          <h4>سلة طلباتك فارغة حالياً</h4>
+          <p>أضف بيتزا ساخنة أو برجر أو مقبلات شهية وابدأ تجربة المذاق الفريد!</p>
+          <button type="button" class="btn btn-primary" onclick="hawasApp.closeCart(); location.href='#menu-section';">
+            تصفح قائمة الطعام 🍕
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer Footer with Bill Breakdown -->
+      <div class="drawer-footer" id="cartDrawerFooter" style="display: none;">
+        <div class="bill-breakdown">
+          <div class="bill-row">
+            <span>المجموع الفرعي:</span>
+            <strong id="cartSubtotal">0 ر.ي</strong>
+          </div>
+          <div class="bill-row">
+            <span>التوصيل لأحياء المكلا:</span>
+            <span class="delivery-calc-note" id="cartDeliveryFee">يحدد عند الدفع</span>
+          </div>
+          <div class="bill-row total-row">
+            <span>الإجمالي التقريبي:</span>
+            <strong id="cartGrandTotal">0 ر.ي</strong>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-block btn-checkout" id="btnGoToCheckout">
+          <span>متابعة لإتمام الطلب</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: Checkout Modal (نافذة إتمام الطلب الشاملة) -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="checkoutBackdrop">
+    <div class="modal-dialog modal-checkout" id="checkoutModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h3>تأكيد وإتمام الطلب 🛵</h3>
+          <span class="item-category-tag">مطعم بيتزا هواس - المكلا</span>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeCheckoutBtn" aria-label="إغلاق">&times;</button>
+      </div>
+
+      <div class="modal-body checkout-body">
+        <form id="checkoutForm">
+          <!-- Order Type Choice (Delivery vs Pickup) -->
+          <div class="checkout-section">
+            <h4 class="checkout-sec-title">1. طريقة استلام الطلب</h4>
+            <div class="fulfillment-toggle">
+              <label class="toggle-card active" id="labelDelivery">
+                <input type="radio" name="orderType" value="delivery" checked>
+                <div class="toggle-content">
+                  <span class="toggle-icon">🛵</span>
+                  <strong>توصيل إلى منزلك / مكتبك</strong>
+                  <small>لكافة أحياء ومناطق المكلا</small>
+                </div>
+              </label>
+              <label class="toggle-card" id="labelPickup">
+                <input type="radio" name="orderType" value="pickup">
+                <div class="toggle-content">
+                  <span class="toggle-icon">🏪</span>
+                  <strong>استلام مباشر من الفرع</strong>
+                  <small>فرع المكلا - الشارع العام</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Customer Info -->
+          <div class="checkout-section">
+            <h4 class="checkout-sec-title">2. معلومات الزبون والتوصيل</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="custName">الاسم الكريم <span class="required-mark">*</span></label>
+                <input type="text" id="custName" class="form-input" placeholder="مثال: أحمد عبد الله" required>
+              </div>
+
+              <div class="form-group">
+                <label for="custPhone">رقم الجوال اليمني (للاتصال والتنسيق) <span class="required-mark">*</span></label>
+                <input type="tel" id="custPhone" class="form-input" placeholder="مثال: 770123456" required
+                  pattern="^(77|73|71|70|78)[0-9]{7}$">
+                <small class="input-hint">رقم شبكة (يمن موبايل، يو، سبأفون، واي)</small>
+              </div>
+            </div>
+
+            <!-- Delivery Address Fields (Visible if delivery is selected) -->
+            <div id="deliveryFieldsGroup">
+              <div class="form-group">
+                <label for="custDistrict">حي / منطقة التوصيل في المكلا <span class="required-mark">*</span></label>
+                <select id="custDistrict" class="form-select" required>
+                  <option value="" disabled selected>-- اختر منطقتك في المكلا --</option>
+                  <option value="sharj" data-fee="1000">حي الشرج (رسوم التوصيل: 1,000 ر.ي)</option>
+                  <option value="dees" data-fee="1000">حي الديس (رسوم التوصيل: 1,000 ر.ي)</option>
+                  <option value="old_mukalla" data-fee="1200">المكلا القديمة (رسوم التوصيل: 1,200 ر.ي)</option>
+                  <option value="fowa_masaken" data-fee="1500">فُوّه - المساكن (رسوم التوصيل: 1,500 ر.ي)</option>
+                  <option value="fowa_mottadarireen" data-fee="1500">فُوّه - المتضررين (رسوم التوصيل: 1,500 ر.ي)
+                  </option>
+                  <option value="fowa_old" data-fee="1500">فُوّه القديمة (رسوم التوصيل: 1,500 ر.ي)</option>
+                  <option value="ghelelah" data-fee="1200">حي الغليلة (رسوم التوصيل: 1,200 ر.ي)</option>
+                  <option value="forty_flats" data-fee="1500">حي 40 شقة (رسوم التوصيل: 1,500 ر.ي)</option>
+                  <option value="khalaf" data-fee="1500">منطقة خلف (رسوم التوصيل: 1,500 ر.ي)</option>
+                  <option value="boyesh" data-fee="2000">بويش والرواد (رسوم التوصيل: 2,000 ر.ي)</option>
+                  <option value="rokob" data-fee="2500">روكب (رسوم التوصيل: 2,500 ر.ي)</option>
+                  <option value="joul_mas-ha" data-fee="2000">جول مسحة (رسوم التوصيل: 2,000 ر.ي)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="custAddress">العنوان التفصيلي وأقرب معلم بالمكلا <span
+                    class="required-mark">*</span></label>
+                <input type="text" id="custAddress" class="form-input"
+                  placeholder="مثال: الشرج، الشارع الأول، بجانب صيدلية ... عمارة رقم ...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Options -->
+          <div class="checkout-section">
+            <h4 class="checkout-sec-title">3. طريقة الدفع المفضلة</h4>
+            <div class="payment-methods-grid">
+              <label class="pay-method-card active">
+                <input type="radio" name="payMethod" value="cash" checked>
+                <span class="pay-radio-dot"></span>
+                <div class="pay-desc">
+                  <strong>💵 نقداً عند الاستلام (كاش)</strong>
+                  <small>ادفع للكابتن عند تسليم الطلب ساخناً</small>
+                </div>
+              </label>
+
+              <label class="pay-method-card">
+                <input type="radio" name="payMethod" value="kuraimi">
+                <span class="pay-radio-dot"></span>
+                <div class="pay-desc">
+                  <strong>🏦 حساب بنك الكريمي</strong>
+                  <small>تحويل مباشر لحساب المطعم المعتمد</small>
+                </div>
+              </label>
+
+              <label class="pay-method-card">
+                <input type="radio" name="payMethod" value="qutaibi">
+                <span class="pay-radio-dot"></span>
+                <div class="pay-desc">
+                  <strong>📱 بنك القطيبي الإسلامي</strong>
+                  <small>تحويل سريع عبر تطبيق بنك القطيبي</small>
+                </div>
+              </label>
+            </div>
+
+            <!-- Bank Accounts Info Box (Shown when Kuraimi or Qutaibi is selected) -->
+            <div class="bank-info-alert" id="bankInfoBox" style="display: none;">
+              <div class="bank-info-row">
+                <span class="bank-tag" id="bankNameTitle">بنك الكريمي</span>
+                <span class="bank-account-num" id="bankAccountNumber">3001234567</span>
+                <button type="button" class="btn-copy-account" id="btnCopyAccount">نسخ الحساب</button>
+              </div>
+              <p class="bank-notice">يرجى كتابة رقم الإشعار أو إرسال صورة التحويل عبر واتساب المطعم فور تأكيد الطلب.</p>
+            </div>
+          </div>
+
+          <!-- Checkout Final Bill Summary -->
+          <div class="checkout-final-summary">
+            <div class="summary-line">
+              <span>قيمة الطلبات:</span>
+              <strong id="finalSubtotal">0 ر.ي</strong>
+            </div>
+            <div class="summary-line">
+              <span>أجرة التوصيل:</span>
+              <strong id="finalDelivery">0 ر.ي</strong>
+            </div>
+            <div class="summary-line grand">
+              <span>المبلغ الإجمالي للدفع:</span>
+              <strong id="finalGrandTotal">0 ر.ي</strong>
+            </div>
+          </div>
+
+          <!-- WhatsApp Notification Checkbox -->
+          <div class="whatsapp-optin">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="checkSendWhatsapp" checked>
+              <span class="checkbox-indicator"></span>
+              <span class="optin-text">فتح محادثة واتساب المطعم مباشرة لتأكيد الطلب بنسخة فورية 💬</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-confirm-order" id="btnSubmitOrder">
+            <span>تأكيد الطلب وبدء التحضير 🔥</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 13l4 4L19 7"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: Live Order Tracker (شاشة تتبع الطلب الحي) -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="trackerBackdrop">
+    <div class="modal-dialog modal-tracker" id="trackerModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="tracker-live-pill">
+            <span class="pulse-green"></span>
+            <span>مباشر من أفران المكلا</span>
+          </div>
+          <h3>شاشة تتبع حالة الطلب</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeTrackerBtn" aria-label="إغلاق">&times;</button>
+      </div>
+
+      <div class="modal-body tracker-body">
+        <!-- Tracker Order Header -->
+        <div class="order-id-banner">
+          <div>
+            <span class="order-label">رقم الطلب الفريد:</span>
+            <h2 class="order-code" id="trackerOrderCode">#HW-0000</h2>
+          </div>
+          <div class="eta-box">
+            <span class="eta-label">الوقت التقديري المتبقي:</span>
+            <strong class="eta-time" id="trackerEtaTimer">-- دقيقة</strong>
+          </div>
+        </div>
+
+        <!-- 4-Step Interactive Progress Tracker -->
+        <div class="tracker-stepper">
+          <!-- Step 1: Received -->
+          <div class="step-progress-node active" id="stepNode1">
+            <div class="node-icon-circle">📋</div>
+            <div class="node-label">
+              <strong>تم الاستلام</strong>
+              <small>تم تأكيد ومراجعة طلبك</small>
+            </div>
+          </div>
+
+          <!-- Step 2: In Oven -->
+          <div class="step-progress-node" id="stepNode2">
+            <div class="node-icon-circle">🔥</div>
+            <div class="node-label">
+              <strong>في الفرن</strong>
+              <small>خبز العجين وتحضير الجبن</small>
+            </div>
+          </div>
+
+          <!-- Step 3: Out for Delivery / Ready -->
+          <div class="step-progress-node" id="stepNode3">
+            <div class="node-icon-circle">🛵</div>
+            <div class="node-label">
+              <strong id="step3Title">في الطريق إليك</strong>
+              <small id="step3Sub">مع كابتن التوصيل</small>
+            </div>
+          </div>
+
+          <!-- Step 4: Delivered -->
+          <div class="step-progress-node" id="stepNode4">
+            <div class="node-icon-circle">🎉</div>
+            <div class="node-label">
+              <strong>تم التسليم</strong>
+              <small>بالهناء والشفاء!</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Status Detail Card -->
+        <div class="tracker-status-box" id="trackerStatusBox">
+          <div class="status-box-header">
+            <span class="status-icon" id="trackerCurrentIcon">🔥</span>
+            <div>
+              <h4 id="trackerCurrentTitle">الطلب قيد التحضير في أفراننا</h4>
+              <p id="trackerCurrentDetail">يقوم الشيف حالياً بفرد العجين الطازج ووضع الصلصة والجبن والخبز في الفرن
+                الحجري الساخن.</p>
+            </div>
+          </div>
+
+          <!-- Order Summary Details Inside Tracker -->
+          <div class="tracker-order-summary">
+            <h5>تفاصيل هذا الطلب:</h5>
+            <div class="tracker-items-list" id="trackerItemsList">
+              <!-- Dynamically populated -->
+            </div>
+            <div class="tracker-meta-row">
+              <span>العنوان: <strong id="trackerAddressText">حي الشرج، المكلا</strong></span>
+              <span>الإجمالي: <strong id="trackerTotalText">0 ر.ي</strong></span>
+              <span>الدفع: <strong id="trackerPaymentText">كاش عند الاستلام</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulator and Actions Controls -->
+        <div class="tracker-actions-bar">
+          <div class="demo-controls">
+            <span class="demo-tag">لوحة تجربة وتحديث المرحلة:</span>
+            <button type="button" class="btn btn-sm btn-outline" id="btnSimulateNextStep">
+              <span>تسريع للمرحلة التالية ⏩</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline" id="btnResetSimulation">
+              <span>إعادة المحاكاة 🔄</span>
+            </button>
+          </div>
+
+          <div class="tracker-contact-btns">
+            <a href="https://wa.me/967770000000" target="_blank" class="btn btn-whatsapp btn-sm"
+              id="btnTrackerWhatsapp">
+              <span>تواصل مع الكابتن / المطعم</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: Order History (سجل الطلبات السابقة) -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="historyBackdrop">
+    <div class="modal-dialog modal-history" id="historyModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3>سجل طلباتك السابقة في بيتزا هواس 📜</h3>
+        <button type="button" class="modal-close-btn" id="closeHistoryBtn" aria-label="إغلاق">&times;</button>
+      </div>
+      <div class="modal-body history-body" id="historyModalBody">
+        <!-- Dynamically rendered order list -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+
+</html>
